@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CC9EFD
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.Builder.Sample.Services", "src\Nant.Builder.Sample.Services\Nant.Builder.Sample.Services.csproj", "{5CC44622-9C08-4456-89DA-43339CC0B166}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.Builder.Sample.Tests", "src\Nant.Builder.Sample.Tests\Nant.Builder.Sample.Tests.csproj", "{8CA4A11D-C914-43BB-B277-F306DAC984AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{4307063C-F4E7-480D-8AF0-D17960E5D782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4307063C-F4E7-480D-8AF0-D17960E5D782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4307063C-F4E7-480D-8AF0-D17960E5D782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC44622-9C08-4456-89DA-43339CC0B166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC44622-9C08-4456-89DA-43339CC0B166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC44622-9C08-4456-89DA-43339CC0B166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC44622-9C08-4456-89DA-43339CC0B166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
