@@ -6,6 +6,7 @@ _ReSharper*
 *.suo
 .nuget/Nuget.config
 packages/**
+*csx*
 
 # mstest test results
 TestResults

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.Builder.Sample.Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.Builder.Sample.Tests", "src\Nant.Builder.Sample.Tests\Nant.Builder.Sample.Tests.csproj", "{8CA4A11D-C914-43BB-B277-F306DAC984AB}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Nant.Builder.Sample.Azure", "src\Nant.Builder.Sample.Azure\Nant.Builder.Sample.Azure.ccproj", "{6B13D455-64D5-43A2-B624-8B0959D3FB7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA4A11D-C914-43BB-B277-F306DAC984AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B13D455-64D5-43A2-B624-8B0959D3FB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B13D455-64D5-43A2-B624-8B0959D3FB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B13D455-64D5-43A2-B624-8B0959D3FB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B13D455-64D5-43A2-B624-8B0959D3FB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
