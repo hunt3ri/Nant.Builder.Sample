@@ -21,8 +21,8 @@ namespace Nant.Builder.Sample.Web.Controllers
         
         public ActionResult Index()
         {
-            _rssService.Test();
-            return View();
+            var feed = _rssService.GetFeed("http://feeds.bbci.co.uk/news/rss.xml");
+            return View(feed);
         }
 
     }

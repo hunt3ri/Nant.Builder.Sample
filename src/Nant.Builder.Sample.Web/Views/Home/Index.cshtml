@@ -1,6 +1,20 @@
-﻿@{
+﻿@model Argotic.Syndication.RssFeed
+
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Nant.Builder.Sample</h1>
+<div class="hero-unit">
+    <h1>Nant.Builder.Sample</h1>
+</div>
+
+<div class="row">
+	<h2>News</h2>
+	<ul>
+		@foreach (var item in Model.Channel.Items.Take(5))
+		{ 
+			<li>@item.Title</li>
+		}
+	</ul>
+</div>

@@ -8,9 +8,11 @@ namespace Nant.Builder.Sample.Services
 {
     public class RssService
     {
-        public void Test()
+        public RssFeed GetFeed(string feedAddress)
         {
-            RssFeed feed = RssFeed.Create(new Uri("http://feeds.bbci.co.uk/news/rss.xml"));
+            RssFeed feed = RssFeed.Create(new Uri(feedAddress));
+
+            return feed;
         }
     }
 }
