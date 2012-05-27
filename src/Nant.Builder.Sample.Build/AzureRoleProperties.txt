@@ -1,0 +1,2 @@
+TargetFrameWorkVersion=v4.0 
+EntryPoint=Nant.Builder.Sample.Web.dll
