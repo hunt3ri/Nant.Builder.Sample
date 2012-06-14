@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <!-- See my blog post here, for further documentation on how to use Nant.Builder: 
-     http://iainhunter.wordpress.com/2012/05/11/automating-visual-studio-2010-builds-and-deployments-with-nant-builder/ 
+	 http://iainhunter.wordpress.com/2012/05/11/automating-visual-studio-2010-builds-and-deployments-with-nant-builder/ 
 	 http://iainhunter.wordpress.com/2012/05/28/visual-studio-turbo-diy-appharbor-with-nant-builder/-->
 <project default="buildRelease" basedir=".">
 
 	<!-- IMPORTANT PLEASE SET THESE VALUES APPROPRIATELY FOR YOUR ENVIRONMENT IN GLOBALBUILDSETTINGS.XML.  If you use NantBuilder 
-	     on multiple projects you can share the file between multiple projects, by referencing the file, eg c:\dev\globalbuildsettings.xml-->
+		 on multiple projects you can share the file between multiple projects, by referencing the file, eg c:\dev\globalbuildsettings.xml-->
 	<include buildfile="GlobalBuildSettings.xml" />
 
 	<!--The name of your solution, please overwrite the default -->
 	<property name="solution.name" value="Nant.Builder.Sample"/>
 
 	<!-- Comma seperated list of projects contained in your solution, DO NOT include Azure or Build projects, these should be projects 
-	     containing Assembly.Info files, so they get appropriately versioned.-->
+		 containing Assembly.Info files, so they get appropriately versioned.-->
 	<property name="solution.projects" value="Nant.Builder.Sample.Services,Nant.Builder.Sample.Tests,Nant.Builder.Sample.Web" />
 
 	<!-- Set the configuration for compilation, typically release, but may be custom -->
@@ -26,6 +26,11 @@
 	<!-- If your projects reside in a different directory from the .sln file specify here, or leave empty if not -->
 	<property name="solution.src.dir" value="src" />
 
+	<!--Nunit Test Settings-->
+	<property name="run.nunit.tests" value="true" />
+	<!--The name of the project containing your Nunit tests-->
+	<property name="tests.project.name" value="Nant.Builder.Sample.Tests" />
+	
 	<!--Azure Settings-->
 
 	<!-- Packaging -->
@@ -38,7 +43,7 @@
 	<property name="azure.service.config.file" value="ServiceConfiguration.Cloud.cscfg" />
 
 	<!-- Deployment -->
-	<property name="deploy.azure.package" value="true" />
+	<property name="deploy.azure.package" value="false" />
 	<!-- The name of the file containing your exported subcription details - IMPORTANT keep this file safe as it contains very sensitive credentials about your Azure sub -->
 	<property name="azure.subscription.credentials.file" value="C:\dev\tools\WindowsAzure\Subscriptions\yoursub.xml"/>
 	<!-- The name of a azure hosted service where you want to deploy your app-->
@@ -58,7 +63,9 @@
 
 		<call target="UpdateAssemblyInfo" />
 
-		<call target="CompileSolution" /> 
+		<call target="CompileSolution" />
+
+		<call target="RunNunitTests" if="${run.nunit.tests}" />
 		
 		<call target="CreateAzurePackage" if="${create.azure.package}" />
 
