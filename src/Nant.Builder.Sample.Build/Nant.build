@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<!-- See my blog post here, for further documentation on how to use Nant.Builder: 
-	 http://iainhunter.wordpress.com/2012/05/11/automating-visual-studio-2010-builds-and-deployments-with-nant-builder/ 
-	 http://iainhunter.wordpress.com/2012/05/28/visual-studio-turbo-diy-appharbor-with-nant-builder/-->
+<!-- See my blog posts here, for further documentation on how to use Nant.Builder: 
+     http://iainhunter.wordpress.com/2012/05/11/automating-visual-studio-2010-builds-and-deployments-with-nant-builder/ 
+	 http://iainhunter.wordpress.com/2012/05/28/visual-studio-turbo-diy-appharbor-with-nant-builder/
+	 -->
 <project default="buildRelease" basedir=".">
 
 	<!-- IMPORTANT PLEASE SET THESE VALUES APPROPRIATELY FOR YOUR ENVIRONMENT IN GLOBALBUILDSETTINGS.XML.  If you use NantBuilder 
-		 on multiple projects you can share the file between multiple projects, by referencing the file, eg c:\dev\globalbuildsettings.xml-->
+	     on multiple projects you can share the file between multiple projects, by referencing the file, eg c:\dev\globalbuildsettings.xml-->
 	<include buildfile="GlobalBuildSettings.xml" />
 
 	<!--The name of your solution, please overwrite the default -->
 	<property name="solution.name" value="Nant.Builder.Sample"/>
 
 	<!-- Comma seperated list of projects contained in your solution, DO NOT include Azure or Build projects, these should be projects 
-		 containing Assembly.Info files, so they get appropriately versioned.-->
+	     containing Assembly.Info files, so they get appropriately versioned.-->
 	<property name="solution.projects" value="Nant.Builder.Sample.Services,Nant.Builder.Sample.Tests,Nant.Builder.Sample.Web" />
 
 	<!-- Set the configuration for compilation, typically release, but may be custom -->
@@ -27,10 +28,22 @@
 	<property name="solution.src.dir" value="src" />
 
 	<!--Nunit Test Settings-->
-	<property name="run.nunit.tests" value="true" />
-	<!--The name of the project containing your Nunit tests-->
-	<property name="tests.project.name" value="Nant.Builder.Sample.Tests" />
-
+	<property name="run.nunit.tests" value="false" />
+	<!--The names of the projects containing your Nunit tests, comma seperated with no spaces-->
+	<property name="test.project.names" value="Nant.Builder.Sample.Tests" />
+	
+	<!-- Database Migration Settings - expects FluentMigrator-->
+	<property name="run.db.migrations" value="false" />
+	<!--The name of the project containing your FluentMigrator tests-->
+	<property name="migrations.project.name" value="Nant.Builder.Sample.Migrations" />
+	<!--The connection string you for the db you want to migrate-->
+	<property name="connection.string" value="YOUR-CONNECTIONSTRING-HERE" />
+	<!-- Set flag to true if you wish to rollback a db migration, you need to specify a migration number also-->
+	<property name="rollback.db.migrations" value="false" />
+	<!-- The migration number you wish to rollback to - WARNING be careful you don't delete data by setting this value incorrectly-->
+	<property name="rollback.to.version" value="0" />
+	
+	
 	<!--Azure Settings-->
 
 	<!-- Packaging -->
@@ -63,9 +76,13 @@
 
 		<call target="UpdateAssemblyInfo" />
 
-		<call target="CompileSolution" />
-
+		<call target="CompileSolution" /> 
+		
 		<call target="RunNunitTests" if="${run.nunit.tests}" />
+		
+	    <call target="RollbackDbMigrations" if="${rollback.db.migrations}"/>
+		
+		<call target="RunDbMigrations" if="${run.db.migrations}" />
 		
 		<call target="CreateAzurePackage" if="${create.azure.package}" />
 

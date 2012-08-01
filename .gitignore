@@ -9,3 +9,4 @@ packages/**
 csx
 _upgradeReport*
 upgradelog.xml
+AzureRoleProperties.txt
