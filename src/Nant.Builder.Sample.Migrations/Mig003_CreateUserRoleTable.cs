@@ -13,9 +13,9 @@ namespace Nant.Builder.Sample.Migrations
                 .WithColumn("UserId").AsInt32().NotNullable()
                 .WithColumn("RoleId").AsInt16().NotNullable();
 
-            var compKey = new[] { "UserId", "RoleId" };
-
-            Create.PrimaryKey("PK_UserRole").OnTable("UserRole").Columns(compKey);
+            // Doesn't work with sqlite - but this is how you'd create a composite key in Sqlserver using fluentmigrator
+            //var compKey = new[] { "UserId", "RoleId" };
+            //Create.PrimaryKey("PK_UserRole").OnTable("UserRole").Columns(compKey);
 
             Create.ForeignKey("FK_UserRole_User").FromTable("UserRole").ForeignColumn("UserId").ToTable("User").PrimaryColumn("UserId");
             Create.ForeignKey("FK_UserRole_Role").FromTable("UserRole").ForeignColumn("RoleId").ToTable("Role").PrimaryColumn("RoleId");

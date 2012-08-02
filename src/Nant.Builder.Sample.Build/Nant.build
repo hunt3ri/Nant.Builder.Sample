@@ -33,11 +33,11 @@
 	<property name="test.project.names" value="Nant.Builder.Sample.Tests" />
 	
 	<!-- Database Migration Settings - expects FluentMigrator-->
-	<property name="run.db.migrations" value="false" />
+	<property name="run.db.migrations" value="true" />
 	<!--The name of the project containing your FluentMigrator tests-->
 	<property name="migrations.project.name" value="Nant.Builder.Sample.Migrations" />
 	<!--The connection string you for the db you want to migrate-->
-	<property name="connection.string" value="YOUR-CONNECTIONSTRING-HERE" />
+	<property name="connection.string" value="Data Source=C:\dev\tools\sqlite\nant-builder-sample.sqlite;Version=3;" />
 	<!-- Set flag to true if you wish to rollback a db migration, you need to specify a migration number also-->
 	<property name="rollback.db.migrations" value="false" />
 	<!-- The migration number you wish to rollback to - WARNING be careful you don't delete data by setting this value incorrectly-->

@@ -121,10 +121,10 @@
 	</target>
 
 	
-	<loadtasks assembly="${local.workspace}/${solution.name}/packages/FluentMigrator.Tools.1.0.3.0/tools/AnyCPU/40/FluentMigrator.NAnt.dll" if="${run.db.migrations}" />
+	<loadtasks assembly="${local.workspace}/${solution.name}/lib/FluentMigrator.Tools.1.0.3.0/tools/AnyCPU/40/FluentMigrator.NAnt.dll" if="${run.db.migrations}" />
 	<target name="RunDbMigrations" description="Migrate the database to the latest version">
 		<migrate
-	    	database="sqlserver2008"
+	    	database="sqlite"
 	    	connection="${connection.string}"
 	    	target="${buildspace.src.dir}/${migrations.project.name}/bin/${release.configuration}/${migrations.project.name}.dll"
 		/>
