@@ -33,7 +33,7 @@
 	<property name="test.project.names" value="Nant.Builder.Sample.Tests" />
 	
 	<!-- Database Migration Settings - expects FluentMigrator-->
-	<property name="run.db.migrations" value="true" />
+	<property name="run.db.migrations" value="false" />
 	<!--The name of the project containing your FluentMigrator tests-->
 	<property name="migrations.project.name" value="Nant.Builder.Sample.Migrations" />
 	<!--The connection string you for the db you want to migrate-->
