@@ -17,6 +17,8 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Nant.Builder.Sample.Azure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.Builder.Sample.Build", "src\Nant.Builder.Sample.Build\Nant.Builder.Sample.Build.csproj", "{D58EDD54-E2C7-4B8A-B496-91D75563DB43}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nant.Builder.Sample.Data", "src\Nant.Builder.Sample.Data\Nant.Builder.Sample.Data.csproj", "{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,16 @@ Global
 		{D58EDD54-E2C7-4B8A-B496-91D75563DB43}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{D58EDD54-E2C7-4B8A-B496-91D75563DB43}.Release|x86.ActiveCfg = Release|x86
 		{D58EDD54-E2C7-4B8A-B496-91D75563DB43}.Release|x86.Build.0 = Release|x86
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1B61C7FA-56BD-49D9-B8A9-37BDDB0FC368}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
